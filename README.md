@@ -95,6 +95,9 @@ Website at https://mvpleung.github.io/vehicle-keyboard-js/
 - 在 Android4.4 以下的浏览器或者 WebView 中，由于不支持 CSS3 部分特性，会出现输入框界面宽度变化的问题；
 
 ### 版本更新记录
+### v2023.0207
+
+- 更新新能源号码规则
 
 ### v2018.0622
 

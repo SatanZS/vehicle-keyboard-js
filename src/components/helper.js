@@ -79,7 +79,9 @@ export function detectNumberTypeOf(presetNumber) {
   } else if (isProvince(first)) {
     if (presetNumber.length === 8) {
       // 新能源车牌：
-      if (/\W[A-Z][0-9DF][0-9A-Z]\d{3}[0-9DF]/.test(presetNumber)) {
+      if (
+        /\W[A-Z][0-9ABCDEFGHJK][0-9A-Z]\d{3}[0-9ABCDEFGHJK]/.test(presetNumber)
+      ) {
         return def.NUM_TYPES.NEW_ENERGY;
       }
       return def.NUM_TYPES.UNKNOWN;

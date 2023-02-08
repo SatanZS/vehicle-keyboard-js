@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 function resolve(dir) {
   return path.join(__dirname, '.', dir);
@@ -29,18 +30,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
+        test: /\.scss$/,
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this nessessary.
-            scss: 'vue-style-loader!css-loader!sass-loader',
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-          }
-          // other vue-loader options go here
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -57,12 +52,16 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    // make sure to include the plugin!
+    new VueLoaderPlugin()
+  ],
   performance: {
     hints: false
   },
   devtool: '#eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, '../src/components'),
+    static: path.join(__dirname, '../src/components'),
     port: 9000, //端口改为9000
     open: true
   }
@@ -74,7 +73,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '\'production\''
+        NODE_ENV: "'production'"
       }
     }),
     new UglifyJSPlugin({

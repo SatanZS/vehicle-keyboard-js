@@ -108,7 +108,7 @@
   var _LETTERS = 'QWERTYUPASDFGHJKLZXCVBNM';
   var _JING = '警';
   var _123 = '123';
-  var _DF = 'DF';
+  var _DF = 'ABCDEFGHJK';
   var _SHI2007 = '使';
   var _HK = '港';
   var _MACAO = '澳';

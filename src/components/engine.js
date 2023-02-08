@@ -29,22 +29,22 @@
     // 民用键盘布局：
     var _LAYOUT_CIVIL = 'layout.c';
     frm.Cached.reg(
-      options.align === def.KB_ALIGN.JUSTIFY ?
-        {
-          row0: hlp.keysOf(def.S_CIVIL_PVS.substr(0, 9)), // 京津沪晋冀蒙辽吉黑
-          row1: hlp.keysOf(def.S_CIVIL_PVS.substr(9, 9)), // 苏浙皖闽赣鲁豫鄂湘
-          row2: hlp.keysOf(def.S_CIVIL_PVS.substr(18, 9)), // 粤桂琼渝川贵云藏陕
-          row3: hlp.keysOf(
-            // 甘青宁新-+
-            def.S_CIVIL_PVS.substr(27, 4) + ' ' + ' ' + def.S_DEL_OK
-          )
-        } :
-        {
-          row0: hlp.keysOf(def.S_CIVIL_PVS.substr(0, 9)), // 京津沪晋冀蒙辽吉黑
-          row1: hlp.keysOf(def.S_CIVIL_PVS.substr(9, 8)), // 苏浙皖闽赣鲁豫鄂
-          row2: hlp.keysOf(def.S_CIVIL_PVS.substr(17, 8)), // 湘粤桂琼渝川贵云
-          row3: hlp.keysOf(def.S_CIVIL_PVS.substr(25, 6) + def.S_DEL_OK) // 藏陕甘青宁新-+
-        },
+      options.align === def.KB_ALIGN.JUSTIFY
+        ? {
+            row0: hlp.keysOf(def.S_CIVIL_PVS.substr(0, 9)), // 京津沪晋冀蒙辽吉黑
+            row1: hlp.keysOf(def.S_CIVIL_PVS.substr(9, 9)), // 苏浙皖闽赣鲁豫鄂湘
+            row2: hlp.keysOf(def.S_CIVIL_PVS.substr(18, 9)), // 粤桂琼渝川贵云藏陕
+            row3: hlp.keysOf(
+              // 甘青宁新-+
+              def.S_CIVIL_PVS.substr(27, 4) + ' ' + ' ' + def.S_DEL_OK
+            )
+          }
+        : {
+            row0: hlp.keysOf(def.S_CIVIL_PVS.substr(0, 9)), // 京津沪晋冀蒙辽吉黑
+            row1: hlp.keysOf(def.S_CIVIL_PVS.substr(9, 8)), // 苏浙皖闽赣鲁豫鄂
+            row2: hlp.keysOf(def.S_CIVIL_PVS.substr(17, 8)), // 湘粤桂琼渝川贵云
+            row3: hlp.keysOf(def.S_CIVIL_PVS.substr(25, 6) + def.S_DEL_OK) // 藏陕甘青宁新-+
+          },
       _LAYOUT_CIVIL,
       0
     );
@@ -127,69 +127,69 @@
       0
     );
     frm.Cached.reg(
-      options.align === def.KB_ALIGN.JUSTIFY ?
-        {
-          row0: hlp.keysOf(def.S_NUM),
-          row1: hlp.keysOf(def.S_Q_IOP),
-          row2: hlp.keysOf(def.S_A_L + def.S_Z_M.substr(0, 2)),
-          row3: hlp.keysOf(
-            def.S_Z_M.substr(2) +
+      options.align === def.KB_ALIGN.JUSTIFY
+        ? {
+            row0: hlp.keysOf(def.S_NUM),
+            row1: hlp.keysOf(def.S_Q_IOP),
+            row2: hlp.keysOf(def.S_A_L + def.S_Z_M.substr(0, 2)),
+            row3: hlp.keysOf(
+              def.S_Z_M.substr(2) +
                 def.C_XUE +
                 def.C_HANG +
                 def.S_HK_MACAO +
                 def.C_JING
-          ),
-          row4: hlp.keysOf(
-            def.S_POSTFIX_ZH.substr(1) +
+            ),
+            row4: hlp.keysOf(
+              def.S_POSTFIX_ZH.substr(1) +
                 def.C_SHI2007 +
                 ' ' +
                 ' ' +
                 def.S_DEL_OK
-          )
-        } :
-        {
-          row0: hlp.keysOf(def.S_NUM),
-          row1: hlp.keysOf(def.S_Q_IOP),
-          row2: hlp.keysOf(def.S_A_L),
-          row3: hlp.keysOf(def.S_Z_M + def.C_XUE + def.C_HANG),
-          row4: hlp.keysOf(
-            def.S_HK_MACAO + def.S_POSTFIX_ZH + def.C_SHI2007 + def.S_DEL_OK
-          )
-        },
+            )
+          }
+        : {
+            row0: hlp.keysOf(def.S_NUM),
+            row1: hlp.keysOf(def.S_Q_IOP),
+            row2: hlp.keysOf(def.S_A_L),
+            row3: hlp.keysOf(def.S_Z_M + def.C_XUE + def.C_HANG),
+            row4: hlp.keysOf(
+              def.S_HK_MACAO + def.S_POSTFIX_ZH + def.C_SHI2007 + def.S_DEL_OK
+            )
+          },
       _LAYOUT_FULL,
       1
     );
     frm.Cached.reg(
-      options.align === def.KB_ALIGN.JUSTIFY ?
-        {
-          row0: hlp.keysOf(def.S_NUM),
-          row1: hlp.keysOf(def.S_Q_IOP),
-          row2: hlp.keysOf(def.S_A_L + def.S_Z_M.substr(0, 2)),
-          row3: hlp.keysOf(
-            def.S_Z_M.substr(2) +
+      options.align === def.KB_ALIGN.JUSTIFY
+        ? {
+            row0: hlp.keysOf(def.S_NUM),
+            row1: hlp.keysOf(def.S_Q_IOP),
+            row2: hlp.keysOf(def.S_A_L + def.S_Z_M.substr(0, 2)),
+            row3: hlp.keysOf(
+              def.S_Z_M.substr(2) +
                 def.C_XUE +
                 def.S_HK_MACAO +
                 def.S_POSTFIX_ZH.substr(0, 3)
-          ),
-          row4: hlp.keysOf(
-            def.S_POSTFIX_ZH.substr(3) +
+            ),
+            row4: hlp.keysOf(
+              def.S_POSTFIX_ZH.substr(3) +
                 def.C_SHI2007 +
                 ' ' +
                 ' ' +
                 ' ' +
                 ' ' +
                 def.S_DEL_OK
-          )
-        } :
-        {
-          row0: hlp.keysOf(def.S_NUM),
-          row1: hlp.keysOf(def.S_Q_IOP),
-          row2: hlp.keysOf(def.S_A_L),
-          row3: hlp.keysOf(def.S_Z_M + def.C_XUE),
-          row4: hlp.keysOf(
-            def.S_HK_MACAO + def.S_POSTFIX_ZH + def.C_SHI2007 + def.S_DEL_OK
-          )
-        },
+            )
+          }
+        : {
+            row0: hlp.keysOf(def.S_NUM),
+            row1: hlp.keysOf(def.S_Q_IOP),
+            row2: hlp.keysOf(def.S_A_L),
+            row3: hlp.keysOf(def.S_Z_M + def.C_XUE),
+            row4: hlp.keysOf(
+              def.S_HK_MACAO + def.S_POSTFIX_ZH + def.C_SHI2007 + def.S_DEL_OK
+            )
+          },
       _LAYOUT_FULL,
       [2, 3, 4, 5, 6, 7]
     );
